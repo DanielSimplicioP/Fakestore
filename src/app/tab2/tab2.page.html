@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes do Produto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="reload()" *ngIf="error">
+        <ion-icon slot="icon-only" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Estado de Carregamento -->
+  <div *ngIf="isLoading" class="loading-state">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Carregando detalhes do produto...</p>
+  </div>
+
+  <!-- Estado de Erro -->
+  <div *ngIf="error && !isLoading" class="error-state">
+    <ion-icon name="warning" color="danger"></ion-icon>
+    <p>{{ error }}</p>
+    <ion-button (click)="reload()" fill="outline">
+      Tentar Novamente
+    </ion-button>
+    <p *ngIf="retryCount > 0" class="retry-message">
+      Tentativa {{ retryCount }} de {{ maxRetries }}
+    </p>
+  </div>
+
+  <!-- Estado de Sucesso -->
+  <div *ngIf="product && !isLoading" class="product-details">
+    <ion-card>
+      <img [src]="product.image" [alt]="product.title" class="product-image">
+      
+      <ion-card-header>
+        <ion-card-title>{{ product.title }}</ion-card-title>
+        <ion-card-subtitle>{{ product.category | uppercase }}</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <p class="description">{{ product.description }}</p>
+        
+        <ion-item lines="none">
+          <ion-label>Preço:</ion-label>
+          <ion-badge color="success">{{ product.price | currency:'BRL' }}</ion-badge>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-label>Avaliação:</ion-label>
+          <ion-badge color="warning">
+            {{ product.rating?.rate || 0 }} ({{ product.rating?.count || 0 }} avaliações)
+          </ion-badge>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

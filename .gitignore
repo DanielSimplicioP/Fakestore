@@ -1,0 +1,21 @@
+# Ignorar node_modules
+node_modules/
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar configurações do IDE
+.idea/
+.vscode/
+
+# Ignorar arquivos de build
+www/
+dist/
+
+
+
+
+
+
+.angular/cache/
+.angular/cache/

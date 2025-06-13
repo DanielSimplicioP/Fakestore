@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let product of products" [routerLink]="['/tabs/tab2', product.id]">
+      <ion-thumbnail slot="start">
+        <img [src]="product.image" [alt]="product.title">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.price | currency }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadMoreProducts($event)">
+    <ion-infinite-scroll-content 
+      loadingSpinner="bubbles"
+      loadingText="Carregando mais produtos...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
