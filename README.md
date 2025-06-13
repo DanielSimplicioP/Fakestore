@@ -1,26 +1,59 @@
-# mobileFakeStore
+# 📱 Nome do Projeto
 
-Aplicativo móvel desenvolvido com Ionic e Angular para consumo da Fake Store API.
+![Capa do Projeto](https://via.placeholder.com/800x400?text=Capa+do+Projeto)
 
-## Descrição do Projeto
+## 📝 Descrição do Projeto
+Aplicativo mobile desenvolvido com Ionic e Angular para catálogo de produtos, contendo:
 
-Este projeto é um aplicativo móvel desenvolvido com o framework Ionic em conjunto com Angular, capaz de consumir dados da Fake Store API (https://fakestoreapi.com). O aplicativo permite:
+- Listagem paginada de produtos
+- Visualização detalhada com galeria de imagens
+- Busca por categorias
+- Sistema de avaliação de produtos
+- Interface adaptável para diversos dispositivos
 
-- Listar todos os produtos disponíveis na API
-- Visualizar detalhes de cada produto
-- Exibir informações sobre o desenvolvedor
+### 🖼️ Telas do Projeto
+| ![Tela 1](https://via.placeholder.com/300x600?text=Lista+de+Produtos) | ![Tela 2](https://via.placeholder.com/300x600?text=Detalhes+do+Produto) |
+|------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| *Listagem de produtos*                                                 | *Detalhes do produto*                                                   |
 
-## Pré-requisitos
+| ![Tela 3](https://via.placeholder.com/300x600?text=Busca+por+Categoria) | ![Tela 4](https://via.placeholder.com/300x600?text=Carrinho+de+Compras) |
+|-------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| *Filtro por categoria*                                                  | *Carrinho de compras*                                                   |
 
-Antes de começar, você precisará ter instalado em seu computador:
+| ![Tela 5](https://via.placeholder.com/300x600?text=Perfil+do+Usuário)  |
+|-------------------------------------------------------------------------|
+| *Área do usuário*                                                       |
 
-- Node.js (versão 14.x ou superior)
-- npm (geralmente vem com o Node.js)
+## ⚙️ Pré-requisitos
+Antes de começar, verifique se possui instalado:
+
+- Node.js v18.x
+- npm v9.x ou yarn
+- Ionic CLI v7+
 - Git
-- Ionic CLI (instalado globalmente via npm)
+- Java JDK 11+ (para build Android)
+- Xcode (para build iOS)
 
-## Como Baixar e Executar
+## 📥 Como Baixar e Executar
+Siga estes passos para configurar o projeto:
 
-1. Clone o repositório:
 ```bash
-git clone https://github.com/DanielSimplicioP/mobileFakeStore.git
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-projeto.git
+
+# Acesse a pasta do projeto
+cd seu-projeto
+
+# Instale as dependências
+npm install
+
+# Execute o servidor de desenvolvimento
+ionic serve
+
+# Para build Android
+ionic capacitor add android
+ionic capacitor build android
+
+# Para build iOS
+ionic capacitor add ios
+ionic capacitor build ios
